@@ -1,0 +1,19 @@
+= Simple Spring Boot app that consumes uri from user provided service
+
+== Create UPS
+
+[source,bash]
+----
+$ cf push
+$ cf create-user-provided-service my-uri-ups -p uri,tag
+
+uri> http://host:port/path
+
+tag> uri
+Creating user provided service my-uri-ups in org west-fe-jholmes / space development as jholmes@pivotal.io...
+OK
+$ cf bind-service spring-boot-config my-uri-ups
+$ cf restage spring-boot-config
+$ curl -i http://spring-boot-confg.MY_CF_DOMAIN/config
+----
+

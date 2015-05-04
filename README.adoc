@@ -13,6 +13,28 @@ tag> uri
 Creating user provided service my-uri-ups in org west-fe-jholmes / space development as jholmes@pivotal.io...
 OK
 $ cf bind-service spring-boot-config my-uri-ups
+$ cf env spring-boot-config
+Getting env variables for app spring-boot-config in org west-fe-jholmes / space development as jholmes@pivotal.io...
+OK
+
+System-Provided:
+{
+  "VCAP_SERVICES": {
+    "user-provided": [
+      {
+        "credentials": {
+          "tag": "uri",
+          "uri": "http://host:port/path"
+        },
+        "label": "user-provided",
+        "name": "my-uri-ups",
+        "syslog_drain_url": "",
+        "tags": []
+      }
+    ]
+  }
+}
+
 $ cf restage spring-boot-config
 $ curl -i http://spring-boot-confg.MY_CF_DOMAIN/config
 ----

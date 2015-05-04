@@ -1,6 +1,6 @@
 = Simple Spring Boot app that consumes uri from user provided service
 
-== Create UPS
+== Running in Cloud Foundry
 
 [source,bash]
 ----
@@ -39,3 +39,7 @@ $ cf start spring-boot-config
 $ curl -i http://spring-boot-confg.MY_CF_DOMAIN/config
 ----
 
+== Running locally
+Set the active profile to 'local' by adding the VM argument: 
+[source]
+-Dspring.profiles.active=local

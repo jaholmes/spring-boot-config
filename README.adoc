@@ -10,11 +10,11 @@ $ cf create-user-provided-service my-uri-ups -p uri,tag
 uri> http://host:port/path
 
 tag> uri
-Creating user provided service my-uri-ups in org west-fe-jholmes / space development as jholmes@pivotal.io...
+Creating user provided service my-uri-ups in org org1 / space development as jeff...
 OK
 $ cf bind-service spring-boot-config my-uri-ups
 $ cf env spring-boot-config
-Getting env variables for app spring-boot-config in org west-fe-jholmes / space development as jholmes@pivotal.io...
+Getting env variables for app spring-boot-config in org org1 / space development as jeff...
 OK
 
 System-Provided:

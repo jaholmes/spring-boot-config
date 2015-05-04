@@ -3,21 +3,32 @@ package org.jeff.config;
 import org.springframework.cloud.Cloud;
 import org.springframework.cloud.CloudFactory;
 
+/**
+ * Bean that contains URI for a user provided service
+ */
 public class UpsService {
 	String upsName;
 	String uri;
+	UriServiceInfo uriServiceInfo;
 
 	public UpsService(String upsName) {
 		this.upsName = upsName;
-		this.uri = this.getUriServiceInfo().getUri();
+		this.uriServiceInfo = getUriServiceInfo();
 	}
 	
+	/**
+	 * Use when overriding uri with local value via setUri
+	 */
 	public UpsService() {}
-
+	
 	public String getUri() {
-		return uri;
+		if (uri != null) return uri;
+		return uriServiceInfo.getUri();
 	}
 
+	/**
+	 * Use to override uri in local case
+	 */
 	public void setUri(String uri) {
 		this.uri = uri;
 	}
@@ -33,5 +44,4 @@ public class UpsService {
         		(UriServiceInfo) cloud.getServiceInfo(getUpsName());
         return uriServiceInfo; 
     }
-	
 }

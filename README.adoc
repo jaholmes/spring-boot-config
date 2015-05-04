@@ -4,7 +4,7 @@
 
 [source,bash]
 ----
-$ cf push
+$ cf push --no-start
 $ cf create-user-provided-service my-uri-ups -p uri,tag
 
 uri> http://host:port/path

@@ -3,5 +3,5 @@ applications:
 - name: spring-boot-config
   memory: 512M
   instances: 1
-  path: target/spring-boot-config.jar
+  path: target/spring-boot-config-0.0.1-SNAPSHOT.jar
 

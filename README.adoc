@@ -35,7 +35,7 @@ System-Provided:
   }
 }
 
-$ cf restage spring-boot-config
+$ cf start spring-boot-config
 $ curl -i http://spring-boot-confg.MY_CF_DOMAIN/config
 ----
 
